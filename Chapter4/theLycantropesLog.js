@@ -20,6 +20,11 @@ function phi(table) {
    * (table[1] + table[3]) * (table[0] + table[2]))
 }
 
+//A more elegant way to write phi function, using expanded array as binding
+function phi2([n00, n01, n10, n11]) {
+  return (n11 * n00 - n10 * n01)/Math.sqrt((n10 + n11) * (n00 + n11) * (n01 + n11) * (n00 + n10));
+}
+
 console.log(phi([76, 9, 4, 1]))
 //0.06859943405700354
 
@@ -62,8 +67,18 @@ for (let event of journalEvents(JOURNAL)) {
 
 //Filter out lower correlations
 for (let event of journalEvents(JOURNAL)) {
-  let corr = phi(extractTableFor(event, JOURNAL);
+  let corr = phi(extractTableFor(event, JOURNAL));
   if (corr > 0.1 || corr < -0.1) {
-    console.log(event + ":", corr));
-  }  
+    console.log(event + ":", corr);
+  }
 }
+
+//Peanuts has a +ve corr, whereas brushing has negative. Extract days when he ate peanuts and did not brush
+for (let entry of JOURNAL) {
+  if (entry.events.includes("peanuts") && !entry.events.includes("brushed teeth")) {
+    entry.events.push("peanut teeth");
+  }
+}
+
+console.log("Peanut teeth :", phi(extractTableFor("peanut teeth", JOURNAL)));
+//Correlation : 1
