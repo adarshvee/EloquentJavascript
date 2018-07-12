@@ -1,5 +1,4 @@
 let empty = {};
-
 console.log(empty.toString());
 //[object Object]
 
@@ -12,9 +11,7 @@ console.log(Object.getPrototypeOf(empty) == Object.prototype)
 console.log(Object.getPrototypeOf(Object.prototype));
 //null
 
-function doNothing() {
-  //
-}
+function doNothing() {}
 
 console.log(Object.getPrototypeOf(doNothing));
 //ƒ () { [native code] }

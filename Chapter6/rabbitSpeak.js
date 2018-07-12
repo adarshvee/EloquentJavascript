@@ -28,13 +28,13 @@ normalize.call({coords : [0, 2, 5], length : 5});
 //[0, 0.4, 1]
 //this will not work if we use function keyword inside the map function, as this would be null
 
-let protoRabbit = {
+let rabbitEidos = {
   speak(line) {
     console.log(`The ${this.type} rabbit says "${line}"`);
   }
 };
 
-let greenRabbit = Object.create(protoRabbit);
+let greenRabbit = Object.create(rabbitEidos);
 greenRabbit.type = "green";
 greenRabbit.speak("Hey I am new-born");
 
@@ -45,8 +45,8 @@ function makeRabbit(type) {
   return rabbit;
 }
 
-
-//Use a constructor, and JS automatically binds "this" and maps the return type
+//Use a constructor, and JS automatically
+//binds "this" and maps the return type
 function Rabbit(type) {
   this.type = type;
 }
@@ -112,7 +112,9 @@ console.log(blackRabbit[sym]);
 
 //Create an interface using a Symbol
 const toStringSymbol = Symbol("toString");
-Array.prototype[toStringSymbol] = function() {return `${this.length} cm of blue yarn`;};
+Array.prototype[toStringSymbol] = function() {
+  return `${this.length} cm of blue yarn`;
+};
 
 console.log([1, 2].toString());
 //1,2

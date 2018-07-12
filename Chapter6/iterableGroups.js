@@ -12,20 +12,16 @@ class Group {
   constructor() {
     this.content = [];
   }
-
   add(value) {
     if (!this.has(value)) this.content.push(value);
     else console.log("Duplicate element ", value);
   }
-
   delete(value) {
     this.content = this.content.filter(e => value !== e);
   }
-
   has(value) {
     return this.content.includes(value);
   }
-
   static from (collection) {
     let grp = new Group();
     for (let el of collection) {
@@ -33,7 +29,6 @@ class Group {
     }
     return grp;
   }
-
   [Symbol.iterator]() {
     return new GroupIterator(this);
   }

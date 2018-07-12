@@ -22,5 +22,3 @@ To compute the measure of correlation between two Boolean variables, we can use 
 journal.js contains all the 04_data
 
 To extract a two-by-two table for a specific event from the journal, we must loop over all the entries and tally how many times the event occurs in relation to squirrel transformations.
-
-  
