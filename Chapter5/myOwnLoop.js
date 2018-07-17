@@ -1,4 +1,4 @@
-//2nd exercise in chapter 2 of EJS
+//2nd exercise in chapter 5 of EJS
 /*
 Write a higher-order function loop that provides something like a for loop statement. It takes a value,
 a test function, an update function, and a body function. Each iteration, it first runs the test function on the current
