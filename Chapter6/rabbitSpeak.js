@@ -20,6 +20,12 @@ speak.call(whiteRabbit, "Well, she doesn't even exist :)");
 whiteRabbit.speak.call(redRabbit, "Hehe. I am red impersonating white");
 //The red says "Hehe. I am red impersonating white"
 
+//Use binding for "this"
+pinkRabbit = {type : "pink", speak};
+pinkSpeak = speak.bind(pinkRabbit);
+pinkSpeak("Holla!");
+//The pink says "Holla!"
+
 //this works differently when used with arrow functions
 function normalize() {
   console.log(this.coords.map(n => n/this.length));
