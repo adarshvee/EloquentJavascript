@@ -1,4 +1,4 @@
-// Final exercise problem from chapter 6 of eloquent JS
+// Final exercise problem from chapter 5 of eloquent JS
 /*
 Write a function that computes the dominant writing direction in a string of text. Remember that each script
 object has a direction property that can be "ltr" (left to right), "rtl" (right to left), or "ttb" (top to bottom).
